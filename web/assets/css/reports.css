@@ -1,0 +1,86 @@
+
+/*REPORTS*/
+main {
+    min-height: 63vh;
+    width: 100%;
+    background: white;
+}
+
+.report {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: 0 auto;
+
+}
+
+.report__header {
+    flex: 1 0 70%;
+    text-align: center;
+    margin-bottom: 80px;
+    border: 2px solid #FFB809;
+    border-radius: 25px;
+}
+
+.btn.btn-yellow {
+    margin: 0 auto;
+    display: block;
+    width: 100px;
+    height: 30px;
+    border: 3px solid rgba(255, 184, 9, 1);
+    border-radius: 12px;
+    background: rgba(255, 184, 9, .4);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    transition: 0.3s all linear;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn.btn-yellow:hover {
+    background: rgba(255, 184, 9, .8);
+    cursor: pointer;
+}
+
+li a {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+ul.nav__reports-year {
+    height: 100%;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    /*margin: 0 auto;*/
+
+}
+
+.nav__reports-year > li.btn.btn-yellow {
+    height: 100%;
+    width: 150px;
+    display: inline-block;
+    transition: all 0.3s linear;
+    font-size: 16px;
+    margin: 0 30px 30px 30px;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+button a {
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+i.fa {
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/reports.css') }}" />
+{% endblock %}
+
+{% block header %}
+    <h1>Sprawozdania</h1>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="route"><br></div>
+        <div class="container">
+            <ul class="nav__reports-year">
+            {% if years is defined %}
+                {% for year in years %}
+                        <li class="btn btn-yellow"><a class="year" href={{ path("reports", {'year': year}) }}>{{ year }}</a></li>
+                {% endfor %}
+            {% endif %}
+            </ul>
+
+            {% if reports is defined %}
+                {% for report in reports %}
+                    <div class="report">
+                        {% if report.reportCategory.name matches "/Sprawozdanie finansowe/ui" %}
+                            <div class="report__header">
+                                <h2>Sprawozdanie finansowe</h2>
+                                <div>
+                                    <h3>Za rok {{ report.date | date("Y") }}</h3>
+                                </div>
+                                <button class="btn btn-yellow"><a target="_blank" href={{ asset("assets/additions/" ~ report.name) }}>Otwórz</a></button>
+                            </div>
+                        {% endif %}
+
+                        {% if report.reportCategory.name matches "/Sprawozdanie merytoryczne/ui" %}
+                            <div class="report__header">
+                                <h2>Sprawozdanie merytoryczne</h2>
+                                <div>
+                                    <h3>Za rok {{ report.date | date("Y") }}</h3>
+                                </div>
+                                <button class="btn btn-yellow"><a target="_blank" href={{ asset("assets/additions/" ~ report.name) }}>Otwórz</a></button>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <article class="report">
+
+            </article>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,31 @@
+<nav>
+    <img class="nav-logo" src={{ asset("assets/images/logo.png") }} />
+    <ul class="navbar-main">
+        <li><a href={{ path('index') }}>Strona główna</a></li>
+        <li><a href={{ path('about') }}>O stowarzyszeniu</a></li>
+        <li><a href={{ path('actuals') }}>Aktualności</a></li>
+        {#<li><a href={{ path('projects') }}>Projekty</a></li>#}
+        <li><a href={{ path('reports') }}>Sprawozdania</a></li>
+        <li><a href="#contactModal">Kontakt</a></li>
+    </ul>
+</nav>
+<nav class="navbar-collapse">
+    <i class="fa fa-bars"></i>
+    <ul class="navbar-hidden">
+        <li><a href={{ path('index') }}>Strona główna</a></li>
+        <li><a href={{ path('about') }}>O stowarzyszeniu</a></li>
+        <li><a href={{ path('actuals') }}>Aktualności</a></li>
+        {#<li><a href={{ path('projects') }}>Projekty</a></li>#}
+        <li><a href={{ path('reports') }}>Sprawozdania</a></li>
+        <li><a href="#contactModal">Kontakt</a></li>
+    </ul>
+</nav>
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous">
+    </script>
+    <script src={{ asset("assets/js/navbarScroll.js") }}></script>
+    <script src={{ asset("assets/js/navbarCollapse.js") }}></script>
+{% endblock %}

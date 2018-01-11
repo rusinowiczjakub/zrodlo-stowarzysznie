@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/actuals.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/post.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/lightbox.min.css') }}" />
+{% endblock %}
+
+{% block header %}
+    <h1>{{ post.header }}</h1>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="route"><br></div>
+        <div class="container">
+            <div class="single__content">
+                {% autoescape false %}
+                    <div>{{ post.content }}</div>
+                {% endautoescape %}
+                <p>{{ post.sign }}</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery__header">
+                <h2>Galeria</h2>
+                <hr>
+            </div>
+            <div class="gallery__images">
+                {% for image in post.images %}
+                    <a href={{ asset("uploads/" ~ image.name) }} data-lightbox="mygallery"><img src={{ asset("uploads/" ~ image.name) }}></a>
+                {% endfor %}
+                {#<a href={{ asset("uploads/") }} data-lightbox="mygallery"><img src={{ asset("uploads/") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+                {#<a href={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }} data-lightbox="mygallery"><img src={{ asset("assets/images/Obrazki/pexels-photo-226616.jpeg") }}></a>#}
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script src={{ asset("assets/js/lightbox-plus-jquery.min.js") }}></script>
+{% endblock %}

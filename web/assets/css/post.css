@@ -1,0 +1,28 @@
+.single__content p:last-of-type {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.gallery__header hr{
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+
+}
+
+.gallery img {
+    max-height: 250px;
+    margin: 10px 10px 10px 10px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    max-height: 270px;
+    margin: 0 0 0 0;
+}

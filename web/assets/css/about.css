@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* MAIN CSS */
+.bg-img {
+    background: url('../images/bg.jpg');
+    /*position: fixed;*/
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+}
+
+
+/*about*/
+header {
+    background-color: #FFB809;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 88px;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 896px;
+    margin: 60px auto;
+    line-height: 30px;
+    font-size: 1.1rem;
+    background: white;
+    margin-bottom: 0;
+}
+
+.images {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.images img {
+    height: 30%;
+    width: 10%;
+    flex: 1;
+    margin-left: 2px;
+    margin-right: 3px;
+    border-radius: 10%;
+}
+
+
+.statut {
+    margin-top: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.statut>hr {
+    border: 2px solid #FFB809;
+    background: #FFB809;
+}
+
+
+.btn.btn-yellow {
+    margin: 0 auto;
+    display: block;
+    width: 100px;
+    height: 30px;
+    border: 3px solid rgba(255, 184, 9, 1);
+    border-radius: 12px;
+    background: rgba(255, 184, 9, .4);
+    margin-top: 10px;
+    transition: 0.3s all linear;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn.btn-yellow:hover {
+    background: rgba(255, 184, 9, .8);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

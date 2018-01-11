@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}"Źródło" - Stowarzyszenie na rzecz wychowanków Zespołu Szół Specjalnych{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/base.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo.png') }}" />
+    </head>
+    <body>
+    {% include 'navbar.html.twig' %}
+    <header>
+        <div class="bg-img"></div>
+        {% block header %}
+        {% endblock %}
+    </header>
+
+
+    {% block body %}
+
+
+    {% endblock %}
+
+    <div class="spacing">
+
+    </div>
+    <footer>
+        <h2>Odwiedź nas na facebooku i stronie internetowej</h2>
+        <a href="https://www.facebook.com/Stowarzyszenie-Źródło-160272364071646/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <a href="https://zssostrowiec.edupage.org/"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+        <i></i>
+    <!--Modal-->
+    <div id="contactModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h1>KONTAKT</h1>
+            <p>ul. Iłżecka 31</p>
+            <p>27-400 Ostrowiec Świętokrzyski</p>
+            <p>Tel: +48 784 510 686</p>
+            <h2>KRS: 0000309966</h2>
+            <p>REGON: 26026284000000</p>
+            <p>NIP: 661-23-22-318</p>
+        </div>
+    </div>
+
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>
