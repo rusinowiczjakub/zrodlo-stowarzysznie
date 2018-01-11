@@ -2,3 +2,4 @@ vendor/
 var/
 wordpress/
 .idea/
+app/config/parameters.yml
