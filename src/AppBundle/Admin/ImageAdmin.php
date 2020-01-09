@@ -2,6 +2,7 @@
 
 namespace AppBundle\Admin;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Image;
@@ -24,6 +25,14 @@ class ImageAdmin extends AbstractAdmin
                 'required' => false
             ]);
     }
+
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper->addIdentifier('id');
+        $listMapper->addIdentifier('name');
+        $listMapper->addIdentifier('post');
+    }
+
     public function prePersist($file) {
         $this->saveFile($file);
     }

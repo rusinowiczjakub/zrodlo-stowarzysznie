@@ -2,6 +2,8 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
+setlocale(LC_TIME, 'pl_PL');
+
 require __DIR__.'/../app/autoload.php';
 include_once __DIR__.'/../app/bootstrap.php.cache';
 

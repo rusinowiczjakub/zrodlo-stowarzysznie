@@ -2,6 +2,7 @@
 
 namespace AppBundle\Admin;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\Report;
@@ -28,6 +29,13 @@ class ReportAdmin extends AbstractAdmin
                 'years' => range(2000, 2032)
             ]);
     }
+
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper->addIdentifier('name');
+        $listMapper->addIdentifier('date');
+    }
+
     public function prePersist($file) {
         $this->saveFile($file);
     }

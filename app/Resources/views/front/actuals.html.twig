@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/actuals.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/actuals.css') }}"/>
 {% endblock %}
 
 {% block header %}
@@ -10,60 +10,166 @@
 {% endblock %}
 
 {% block body %}
-    <main>
-        <div class="route"><br></div>
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/images/bg.jpg');">
+        <div class="overlay"></div>
         <div class="container">
-            <article class="post">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Aktualności</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
                 {% if lastPosts is defined %}
                     {% for post in lastPosts %}
-                        <h1>{{ post.header }}</h1>
-                    <div class="post__image">
-                        {% for image in post.images | slice(0, 1) %}
-                        <img src={{ asset("uploads/" ~ image.name ) }}>
-                            {% endfor %}
-                    </div>
-                    <div class="post__content">
-                        {{ post.content | slice(0, 360) | striptags | raw }}...
-                    </div>
-                        <a href="/actuals/post/{{ post.id }}"><button class="btn btn-yellow">Czytaj więcej</button></a>
+                        <div class="col-md-6 col-lg-4 ftco-animate">
+                            <div class="blog-entry">
+                                {% if post.images | length < 1 %}
+                                <a href="/actuals/post/{{ post.id }}" class="block-20 d-flex align-items-end"
+                                   style="background-image: url({{ asset("assets/images/no-image-icon.png") }});">
+                                    <div class="meta-date text-center p-2">
+                                        <span class="day">{{ post.createdAt | date('d.m.Y') }}</span>
+{#                                        <span class="mos">January</span>#}
+{#                                        <span class="yr">2019</span>#}
+                                    </div>
+                                </a>
+                                {% endif %}
+                                {% for image in post.images | slice(0, 1) %}
+                                    <a href="/actuals/post/{{ post.id }}" class="block-20 d-flex align-items-end"
+                                       style="background-image: url({{ asset("uploads/" ~ image.name ) }});">
+                                        <div class="meta-date text-center p-2">
+                                            <span class="day">{{ post.createdAt | date('d.m.Y') }}</span>
+{#                                            <span class="mos">{{ post.createdAt | date('F') }}</span>#}
+{#                                            <span class="yr">{{ post.createdAt | date('Y') }}</span>#}
+                                        </div>
+                                    </a>
+                                {% endfor %}
 
-                        <hr>
+                                <div class="text bg-white p-4">
+                                    <h3 class="heading"><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></h3>
+                                    <p>{{ post.content | slice(0, 115) | striptags | raw }}</p>
+                                    <div class="d-flex align-items-center mt-4">
+                                        <p class="mb-0"><a href="/actuals/post/{{ post.id }}" class="btn btn-secondary">Czytaj
+                                                dalej <span class="ion-ios-arrow-round-forward"></span></a></p>
+                                        <p class="ml-auto mb-0">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
                 {% elseif posts is not empty %}
                     {% for post in posts %}
-                        <h1>{{ post.header }}</h1>
-                    <div class="post__image">
-                        {% for image in post.images | slice(0, 1) %}
-                            <img src={{ asset("uploads/" ~ image.name ) }}>
-                        {% endfor %}
-                    </div>
-                    <div class="post__content">
-
-                        <p>{{ post.content | slice(0, 360) | striptags | raw }}...</p>
-                    </div>
-                        <a href="/actuals/post/{{ post.id }}"><button class="btn btn-yellow">Czytaj więcej</button></a>
-                    <hr>
+                        <div class="col-md-6 col-lg-4 ftco-animate">
+                            <div class="blog-entry">
+                                {% if post.images | length < 1 %}
+                                    <a href="/actuals/post/{{ post.id }}" class="block-20 d-flex align-items-end"
+                                       style="background-image: url({{ asset("assets/images/no-image-icon.png") }});">
+                                        <div class="meta-date text-center p-2">
+                                            <span class="day">{{ post.createdAt | date('d.m.Y') }}</span>
+                                        </div>
+                                    </a>
+                                {% endif %}
+                                {% for image in post.images | slice(0, 1) %}
+                                    <a href="/actuals/post/{{ post.id }}" class="block-20 d-flex align-items-end"
+                                       style="background-image: url({{ asset("uploads/" ~ image.name ) }});">
+                                        <div class="meta-date text-center p-2">
+                                            <span class="day">{{ post.createdAt | date('d.m.Y') }}</span>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                                <div class="text bg-white p-4">
+                                    <h3 class="heading"><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></h3>
+                                    <p>{{ post.content | slice(0, 115) | striptags | raw }}</p>
+                                    <div class="d-flex align-items-center mt-4">
+                                        <p class="mb-0"><a href="/actuals/post/{{ post.id }}" class="btn btn-secondary">Czytaj
+                                                dalej <span class="ion-ios-arrow-round-forward"></span></a></p>
+                                        <p class="ml-auto mb-0">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
                 {% else %}
                     <h1>Brak postów z tego okresu</h1>
                 {% endif %}
-            </article>
-
-            <aside class="sidebar">
-                <h1>Ostatnie wpisy</h1>
-                <ul>
-                {% for post in sidePosts | slice(0, 5) %}
-                    <li><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></li>
-                {% endfor %}
-                </ul>
-                <h1>Aktualności według daty</h1>
-                <ul>
-                    <li><a href={{ path('actuals_by_year', {'year': 2017}) }}>2017</a></li>
-                    <li><a href={{ path('actuals_by_year', {'year': 2016}) }}>2016</a></li>
-                    <li><a href={{ path('actuals_by_year', {'year': 2015}) }}>2015</a></li>
-                    <li>2014</li>
-                </ul>
-            </aside>
+            </div>
+{#            <div class="row no-gutters my-5">#}
+{#                <div class="col text-center">#}
+{#                    <div class="block-27">#}
+{#                        <ul>#}
+{#                            <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>#}
+{#                            <li class="active"><span>1</span></li>#}
+{#                            <li><a href="#">2</a></li>#}
+{#                            <li><a href="#">3</a></li>#}
+{#                            <li><a href="#">4</a></li>#}
+{#                            <li><a href="#">5</a></li>#}
+{#                            <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
         </div>
-    </main>
+    </section>
+    {#    <main>#}
+    {#        <div class="route"><br></div>#}
+    {#        <div class="container">#}
+    {#            <article class="post">#}
+    {#                {% if lastPosts is defined %}#}
+    {#                    {% for post in lastPosts %}#}
+    {#                        <h1>{{ post.header }}</h1>#}
+    {#                    <div class="post__image">#}
+    {#                        {% for image in post.images | slice(0, 1) %}#}
+    {#                        <img src={{ asset("uploads/" ~ image.name ) }}>#}
+    {#                            {% endfor %}#}
+    {#                    </div>#}
+    {#                    <div class="post__content">#}
+    {#                        {{ post.content | slice(0, 360) | striptags | raw }}...#}
+    {#                    </div>#}
+    {#                        <a href="/actuals/post/{{ post.id }}"><button class="btn btn-yellow">Czytaj więcej</button></a>#}
+
+    {#                        <hr>#}
+    {#                    {% endfor %}#}
+    {#                {% elseif posts is not empty %}#}
+    {#                    {% for post in posts %}#}
+    {#                        <h1>{{ post.header }}</h1>#}
+    {#                    <div class="post__image">#}
+    {#                        {% for image in post.images | slice(0, 1) %}#}
+    {#                            <img src={{ asset("uploads/" ~ image.name ) }}>#}
+    {#                        {% endfor %}#}
+    {#                    </div>#}
+    {#                    <div class="post__content">#}
+
+    {#                        <p>{{ post.content | slice(0, 360) | striptags | raw }}...</p>#}
+    {#                    </div>#}
+    {#                        <a href="/actuals/post/{{ post.id }}"><button class="btn btn-yellow">Czytaj więcej</button></a>#}
+    {#                    <hr>#}
+    {#                    {% endfor %}#}
+    {#                {% else %}#}
+    {#                    <h1>Brak postów z tego okresu</h1>#}
+    {#                {% endif %}#}
+    {#            </article>#}
+
+    {#            <aside class="sidebar">#}
+    {#                <h1>Ostatnie wpisy</h1>#}
+    {#                <ul>#}
+    {#                {% for post in sidePosts | slice(0, 5) %}#}
+    {#                    <li><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></li>#}
+    {#                {% endfor %}#}
+    {#                </ul>#}
+    {#                <h1>Aktualności według daty</h1>#}
+    {#                <ul>#}
+    {#                    <li><a href={{ path('actuals_by_year', {'year': 2017}) }}>2017</a></li>#}
+    {#                    <li><a href={{ path('actuals_by_year', {'year': 2016}) }}>2016</a></li>#}
+    {#                    <li><a href={{ path('actuals_by_year', {'year': 2015}) }}>2015</a></li>#}
+    {#                    <li>2014</li>#}
+    {#                </ul>#}
+    {#            </aside>#}
+    {#        </div>#}
+    {#    </main>#}
 {% endblock %}

@@ -233,4 +233,8 @@ class Post
     {
         return $this->images;
     }
+
+    public function __toString() {
+        return $this->getHeader();
+    }
 }

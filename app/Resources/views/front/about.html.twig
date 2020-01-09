@@ -1,59 +1,284 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}"/>
 {% endblock %}
-    {% block header %}
-        <h1>Kilka słów o Nas</h1>
-    {% endblock %}
+{#    {% block header %}#}
+{#        <h1>Kilka słów o Nas</h1>#}
+{#    {% endblock %}#}
 {% block body %}
-
-    <main>
-        <div class="route"><br></div>
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('assets/images/bg.jpg');">
+        <div class="overlay"></div>
         <div class="container">
-            <p><b>Stowarzyszenie na Rzecz Wychowanków Zespołu Szkół Specjalnych w Ostrowcu Świętokrzyskim „Źródło”</b></p>
-            <p>Celem stowarzyszenia jest działanie na rzecz wyrównywania szans dzieci i młodzieży z niepełnosprawnością intelektualną, prowadzenie ich ku aktywnemu uczestnictwu w życiu społecznym oraz wspieranie ich rodzin.</p>
-            <p>Stowarzyszenie realizuje wskazany cel poprzez: </p>
-            <ol>
-                <li>organizowanie różnych form zajęć umożliwiających dzieciom uczestnictwo, rozwój i organizację sportu, rekreację, rehabilitację ruchową ,turystykę i inne formy mające wpływ na popularyzację i doskonalenie sprawności fizycznych i psychofizycznych</li>
-                <li>zajęcia terapeutyczne indywidualne i zbiorowe,</li>
-                <li>inicjowanie i organizowanie spotkań rodziców w celu wymiany doświadczeń i wsparcia emocjonalnego,</li>
-                <li>zapewnienie dzieciom aktywnych form spędzania wolnego czasu,</li>
-                <li>podejmowanie działań proekologicznych i promujących zdrowy styl życia, organizacja edukacji ekologicznej i regionalnej,</li>
-                <li>prowadzenie działalności gospodarczej w różnorodnych formach organizacyjnych umożliwiających zdobycie środków na realizację celów statutowych,</li>
-                <li>prowadzenie działalności charytatywnej,</li>
-                <li>współpracę z administracją samorządową i rządową, organizacjami pozarządowymi i społecznością lokalną, kościołem katolickim a także innymi instytucjami pomocy społecznej,</li>
-                <li>pozyskiwanie i gromadzenie środków materialnych i finansowych na realizację zadań Stowarzyszenia,</li>
-                <li>inne działania sprzyjające realizacji statutowych celów Stowarzyszenia.</li>
-            </ol>
-            <div class="images">
-                <img src={{ asset("assets/images/o_nas_trip.jpg") }} >
-                <img src={{ asset("assets/images/o_nas_trip2.jpg") }}>
-            </div>
-            <br><p><b>Zarząd: </b></p>
-            <ol>
-                <li>prezes : Ewa Grudniewska</li>
-                <li>wiceprezes : Ewa Ciastek</li>
-                <li>sekretarz : Małgorzata Stramowska</li>
-                <li>skarbnik : Ernest Krajewski</li>
-                <li>członkowie:  Małgorzata Czyż, Justyna Wołowiec, Elżbieta Wypchło</li>
-            </ol>
-            <br><p><b>Komisja Rewizyjna: </b></p>
-            <ol>
-                <li>Agnieszka Wziątek-Dryjas</li>
-                <li>Anna Polit</li>
-                <li>Aneta Stawczyk</li>
-            </ol>
-            <div class="statut">
-                <h2> ROK 2009 - STATUT STOWARZYSZENIA </h2>
-                <hr>
-                <h3>Statut</h3>
-                <h3>Stowarzyszenia na Rzecz</h3>
-                <h3>Wychowanków Zespołu Szkół Specjalnych</h3>
-                <h3>w Ostrowcu Świętokrzyskim</h3>
-                <h3>"Źródło"</h3>
-                <button class="btn btn-yellow"><a target="_blank" href={{ asset('assets/additions/Statut_2009.pdf') }}>Czytaj więcej</a></button>
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">O stowarzyszeniu</h1>
+                    {#                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>#}
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftc-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate">
+                    <h2><b>Stowarzyszenie na Rzecz Wychowanków Zespołu Szkół Specjalnych w Ostrowcu Świętokrzyskim
+                            „Źródło”</b></h2>
+                    <p>Celem stowarzyszenia jest działanie na rzecz wyrównywania szans dzieci i młodzieży z
+                        niepełnosprawnością intelektualną, prowadzenie ich ku aktywnemu uczestnictwu w życiu społecznym
+                        oraz wspieranie ich rodzin.</p>
+                    <p>Stowarzyszenie realizuje wskazany cel poprzez: </p>
+                    <div class="row mt-5">
+                        {#                <li>organizowanie różnych form zajęć umożliwiających dzieciom uczestnictwo, rozwój i organizację sportu, rekreację, rehabilitację ruchową ,turystykę i inne formy mające wpływ na popularyzację i doskonalenie sprawności fizycznych i psychofizycznych</li>#}
+                        {#                <li>zajęcia terapeutyczne indywidualne i zbiorowe,</li>#}
+                        {#                <li>inicjowanie i organizowanie spotkań rodziców w celu wymiany doświadczeń i wsparcia emocjonalnego,</li>#}
+                        {#                <li>zapewnienie dzieciom aktywnych form spędzania wolnego czasu,</li>#}
+                        {#                <li>podejmowanie działań proekologicznych i promujących zdrowy styl życia, organizacja edukacji ekologicznej i regionalnej,</li>#}
+                        {#                <li>prowadzenie działalności gospodarczej w różnorodnych formach organizacyjnych umożliwiających zdobycie środków na realizację celów statutowych,</li>#}
+                        {#                <li>prowadzenie działalności charytatywnej,</li>#}
+                        {#                <li>współpracę z administracją samorządową i rządową, organizacjami pozarządowymi i społecznością lokalną, kościołem katolickim a także innymi instytucjami pomocy społecznej,</li>#}
+                        {#                <li>pozyskiwanie i gromadzenie środków materialnych i finansowych na realizację zadań Stowarzyszenia,</li>#}
+                        {#                <li>inne działania sprzyjające realizacji statutowych celów Stowarzyszenia.</li>#}
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <p>Organizowanie różnych form zajęć umożliwiających dzieciom uczestnictwo, rozwój i
+                                        organizację sportu, rekreację, rehabilitację ruchową ,turystykę i inne formy
+                                        mające wpływ na popularyzację i doskonalenie sprawności fizycznych i
+                                        psychofizycznych</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>Współpracę z administracją samorządową i rządową, organizacjami pozarządowymi i
+                                        społecznością lokalną, kościołem katolickim a także innymi instytucjami pomocy
+                                        społecznej</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>Inicjowanie i organizowanie spotkań rodziców w celu wymiany doświadczeń i
+                                        wsparcia emocjonalnego</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>Zapewnienie dzieciom aktywnych form spędzania wolnego czasu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>Podejmowanie działań proekologicznych i promujących zdrowy styl życia,
+                                        organizacja edukacji ekologicznej i regionalnej</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>Prowadzenie działalności gospodarczej w różnorodnych formach organizacyjnych
+                                        umożliwiających zdobycie środków na realizację celów statutowych</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>Prowadzenie działalności charytatywnej</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <p>Zajęcia terapeutyczne indywidualne i zbiorowe</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="services-2 d-flex">
+                                <div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+
+                                <div class="text">
+                                    <p>pozyskiwanie i gromadzenie środków materialnych i finansowych na realizację zadań
+                                        Stowarzyszenia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);"
+             data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-8 text-center heading-section heading-section-black ftco-animate">
+                    <h2 class="mb-4"><span>X Lat</span> Doświadczenia</h2>
+                    <p>Przez X lat naszej działalności ...</p>
+                </div>
+            </div>
+            <div class="row d-md-flex align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row d-md-flex align-items-center">
+                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="icon"><span class="flaticon-doctor"></span></div>
+                                <div class="text">
+                                    <strong class="number" data-number="18">0</strong>
+                                    <span>Certyfikowanych opiekunów</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="icon"><span class="flaticon-doctor"></span></div>
+                                <div class="text">
+                                    <strong class="number" data-number="351">0</strong>
+                                    <span>Wychowanków</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="icon"><span class="flaticon-doctor"></span></div>
+                                <div class="text">
+                                    <strong class="number" data-number="564">0</strong>
+                                    <span>Zadowolonych rodziców</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="icon"><span class="flaticon-doctor"></span></div>
+                                <div class="text">
+                                    <strong class="number" data-number="300">0</strong>
+                                    <span>Osiągnięć wychowanków</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-8 text-center heading-section ftco-animate">
+{#                    <span class="subheading">Nasz zespół</span>#}
+                    <h2 class="mb-4"><span>Nasz</span> zespół</h2>
+{#                    <p>Separated they live in. A small river named Duden flows by their place and supplies it with the#}
+{#                        necessary regelialia. It is a paradisematic country</p>#}
+                </div>
+            </div>
+            <div class="row ftco-animate justify-content-center">
+                <div class="col-md-12">
+                    <div class="carousel-testimony owl-carousel">
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)">
+                                </div>
+                                <div class="text ml-2 bg-light">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+{#                      <i class="icon-quote-left"></i>#}
+                    </span>
+                                    <p>Zarząd</p>
+                                                <ol>
+                                                    <li>prezes : Ewa Grudniewska</li>
+                                                    <li>wiceprezes : Ewa Ciastek</li>
+                                                    <li>sekretarz : Małgorzata Stramowska</li>
+                                                    <li>skarbnik : Ernest Krajewski</li>
+                                                    <li>członkowie:  Małgorzata Czyż, Justyna Wołowiec, Elżbieta Wypchło</li>
+                                                </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimony-wrap d-flex">
+                                <div class="user-img mr-4" style="background-image: url(images/teacher-2.jpg)">
+                                </div>
+                                <div class="text ml-2 bg-light">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                    </span>
+                                                <p>Komisja Rewizyjna: </p>
+                                                <ol>
+                                                    <li>Agnieszka Wziątek-Dryjas</li>
+                                                    <li>Anna Polit</li>
+                                                    <li>Aneta Stawczyk</li>
+                                                </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h2 class="mb-4"><span>Rok 2009</span> NASZ STATUT</h2>
+                    <p><a href="{{ asset('assets/additions/Statut_2009.pdf') }}" target="_blank" class="btn btn-secondary px-4 py-3 mt-3">Czytaj więcej</a></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="ftco-gallery">
+        <div class="container-wrap">
+            <div class="row no-gutters">
+                <div class="col-md-6 ftco-animate">
+                    <a href="assets/images/o_nas_trip.jpg" class="gallery image-popup img d-flex align-items-center"
+                       style="background-image: url(assets/images/o_nas_trip.jpg);">
+                        <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                            {#                            <span class="icon-instagram"></span>#}
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 ftco-animate">
+                    <a href="assets/images/o_nas_trip2.jpg" class="gallery image-popup img d-flex align-items-center"
+                       style="background-image: url(assets/images/o_nas_trip2.jpg);">
+                        <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                            {#                            <span class="icon-instagram"></span>#}
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

@@ -1,31 +1,78 @@
-<nav>
-    <img class="nav-logo" src={{ asset("assets/images/logo.png") }} />
-    <ul class="navbar-main">
-        <li><a href={{ path('index') }}>Strona główna</a></li>
-        <li><a href={{ path('about') }}>O stowarzyszeniu</a></li>
-        <li><a href={{ path('actuals') }}>Aktualności</a></li>
-        {#<li><a href={{ path('projects') }}>Projekty</a></li>#}
-        <li><a href={{ path('reports') }}>Sprawozdania</a></li>
-        <li><a href="#contactModal">Kontakt</a></li>
-    </ul>
+<div class="py-2 bg-primary">
+    <div class="container">
+        <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+            <div class="col-lg-12 d-block">
+                <div class="row d-flex">
+                    <div class="col-md-5 pr-4 d-flex topper align-items-center">
+                        <div class="icon bg-fifth mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
+                        <span class="text">Iłżecka 31, 27-400 Ostrowiec Świętokrzyski</span>
+                    </div>
+{#                    <div class="col-md pr-4 d-flex topper align-items-center">#}
+{#                        <div class="icon bg-secondary mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>#}
+{#                        <span class="text">youremail@email.com</span>#}
+{#                    </div>#}
+{#                    <div class="col-md pr-4 d-flex topper align-items-center">#}
+{#                        <div class="icon bg-tertiary mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>#}
+{#                        <span class="text">+ 1235 2355 98</span>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+    <div class="container d-flex align-items-center">
+        <div class="navbar-brand">
+        <img class="nav-logo" width="80" height="80" src={{ asset("assets/images/logo.png") }} />
+        <a>Źródło</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/' %}active{% endif %}"><a href="{{ path('index') }}" class="nav-link pl-0">Strona główna</a></li>
+                <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/about' %}active{% endif %}"><a href="{{ path('about') }}" class="nav-link">O stowarzyszeniu</a></li>
+                <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/actuals' %}active{% endif %}"><a href="{{ path('actuals') }}" class="nav-link">Aktualności</a></li>
+                <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/reports' %}active{% endif %}"><a href="{{ path('reports') }}" class="nav-link">Sprawozdania</a></li>
+{#                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>#}
+{#                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>#}
+{#                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>#}
+            </ul>
+        </div>
+    </div>
 </nav>
-<nav class="navbar-collapse">
-    <i class="fa fa-bars"></i>
-    <ul class="navbar-hidden">
-        <li><a href={{ path('index') }}>Strona główna</a></li>
-        <li><a href={{ path('about') }}>O stowarzyszeniu</a></li>
-        <li><a href={{ path('actuals') }}>Aktualności</a></li>
-        {#<li><a href={{ path('projects') }}>Projekty</a></li>#}
-        <li><a href={{ path('reports') }}>Sprawozdania</a></li>
-        <li><a href="#contactModal">Kontakt</a></li>
-    </ul>
-</nav>
+<!-- END nav -->
 
-{% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.js"
-            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous">
-    </script>
-    <script src={{ asset("assets/js/navbarScroll.js") }}></script>
-    <script src={{ asset("assets/js/navbarCollapse.js") }}></script>
-{% endblock %}
+
+{#<nav>#}
+{#    <img class="nav-logo" src={{ asset("assets/images/logo.png") }} />#}
+{#    <ul class="navbar-main">#}
+{#        <li><a href={{ path('index') }}>Strona główna</a></li>#}
+{#        <li><a href={{ path('about') }}>O stowarzyszeniu</a></li>#}
+{#        <li><a href={{ path('actuals') }}>Aktualności</a></li>#}
+{#        #}{#<li><a href={{ path('projects') }}>Projekty</a></li>#}
+{#        <li><a href={{ path('reports') }}>Sprawozdania</a></li>#}
+{#        <li><a href="#contactModal">Kontakt</a></li>#}
+{#    </ul>#}
+{#</nav>#}
+{#<nav class="navbar-collapse">#}
+{#    <i class="fa fa-bars"></i>#}
+{#    <ul class="navbar-hidden">#}
+{#        <li><a href={{ path('index') }}>Strona główna</a></li>#}
+{#        <li><a href={{ path('about') }}>O stowarzyszeniu</a></li>#}
+{#        <li><a href={{ path('actuals') }}>Aktualności</a></li>#}
+{#        #}{#<li><a href={{ path('projects') }}>Projekty</a></li>#}
+{#        <li><a href={{ path('reports') }}>Sprawozdania</a></li>#}
+{#        <li><a href="#contactModal">Kontakt</a></li>#}
+{#    </ul>#}
+{#</nav>#}
+
+{#{% block javascripts %}#}
+{#    <script src="https://code.jquery.com/jquery-3.2.1.js"#}
+{#            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="#}
+{#            crossorigin="anonymous">#}
+{#    </script>#}
+{#    <script src={{ asset("assets/js/navbarScroll.js") }}></script>#}
+{#    <script src={{ asset("assets/js/navbarCollapse.js") }}></script>#}
+{#{% endblock %}#}
