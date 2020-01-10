@@ -13,7 +13,7 @@ class ReportController extends Controller
     public function reportsByDate($year = null)
     {
         $reportRepo = $this->getDoctrine()->getRepository('AppBundle:Report');
-        $reports = $reportRepo->findAll();
+        $reports = $reportRepo->findBy([], ['date' => 'ASC']);
 
         $years = [];
         foreach ($reports as $report) {

@@ -1,54 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/reports.css') }}" />
-{% endblock %}
-
-{% block header %}
-    <h1>Sprawozdania</h1>
-{% endblock %}
-
 {% block body %}
-    <main>
-        <div class="route"><br></div>
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('assets/images/bg.jpg') }})">
+        <div class="overlay"></div>
         <div class="container">
-            <ul class="nav__reports-year">
-            {% if years is defined %}
-                {% for year in years %}
-                        <li class="btn btn-yellow"><a class="year" href={{ path("reports", {'year': year}) }}>{{ year }}</a></li>
-                {% endfor %}
-            {% endif %}
-            </ul>
-
-            {% if reports is defined %}
-                {% for report in reports %}
-                    <div class="report">
-                        {% if report.reportCategory.name matches "/Sprawozdanie finansowe/ui" %}
-                            <div class="report__header">
-                                <h2>Sprawozdanie finansowe</h2>
-                                <div>
-                                    <h3>Za rok {{ report.date | date("Y") }}</h3>
-                                </div>
-                                <button class="btn btn-yellow"><a target="_blank" href={{ asset("assets/additions/" ~ report.name) }}>Otwórz</a></button>
-                            </div>
-                        {% endif %}
-
-                        {% if report.reportCategory.name matches "/Sprawozdanie merytoryczne/ui" %}
-                            <div class="report__header">
-                                <h2>Sprawozdanie merytoryczne</h2>
-                                <div>
-                                    <h3>Za rok {{ report.date | date("Y") }}</h3>
-                                </div>
-                                <button class="btn btn-yellow"><a target="_blank" href={{ asset("assets/additions/" ~ report.name) }}>Otwórz</a></button>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <article class="report">
-
-            </article>
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <h1 class="mb-2 bread">Sprawozdania</h1>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                {% if years is defined %}
+                    {% for year in years %}
+                        <div class="col-md-2"><a style="width: 100%" href="{{ path("reports", {'year': year}) }}"
+                                                 class="btn btn-secondary">{{ year }}
+                                <span class="ion-ios-arrow-round-forward"></span></a></div>
+
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="row align-content-center justify-content-center mt-5">
+                {% if reports is defined %}
+                    {% for report in reports %}
+                            {% if report.reportCategory.name matches "/Sprawozdanie finansowe/ui" %}
+                                <div class="col-md-5 course d-lg-flex ftco-animate">
+                                    <div class="text bg-light p-4" style="width: 100%">
+                                        <h3><a href="#">Sprawozdanie finansowe</a></h3>
+                                        <p class="subheading"><span>Za rok:</span> {{ report.date | date("Y") }}</p>
+                                        <a style="width: 100%" target="_blank" href="{{ asset("assets/additions/" ~ report.name)}}"
+                                           class="btn btn-secondary">Otwórz
+                                            <span class="ion-ios-arrow-round-forward"></span></a>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if report.reportCategory.name matches "/Sprawozdanie merytoryczne/ui" %}
+                                <div class="col-md-5 course d-lg-flex ftco-animate">
+                                    <div class="text bg-light p-4" style="width: 100%">
+                                        <h3><a href="#">Sprawozdanie merytoryczne</a></h3>
+                                        <p class="subheading"><span>Za rok:</span> {{ report.date | date("Y") }}</p>
+                                        <a style="width: 100%" target="_blank" href="{{ asset("assets/additions/" ~ report.name)}}"
+                                           class="btn btn-secondary">Otwórz
+                                            <span class="ion-ios-arrow-round-forward"></span></a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

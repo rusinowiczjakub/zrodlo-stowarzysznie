@@ -7,10 +7,10 @@
                         <div class="icon bg-fifth mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
                         <span class="text">Iłżecka 31, 27-400 Ostrowiec Świętokrzyski</span>
                     </div>
-{#                    <div class="col-md pr-4 d-flex topper align-items-center">#}
-{#                        <div class="icon bg-secondary mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>#}
-{#                        <span class="text">youremail@email.com</span>#}
-{#                    </div>#}
+                    <div class="col-md pr-4 d-flex topper align-items-center">
+                        <div class="icon bg-secondary mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+                        <span class="text">zrodlo@wp.pl</span>
+                    </div>
 {#                    <div class="col-md pr-4 d-flex topper align-items-center">#}
 {#                        <div class="icon bg-tertiary mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>#}
 {#                        <span class="text">+ 1235 2355 98</span>#}
@@ -35,6 +35,7 @@
                 <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/about' %}active{% endif %}"><a href="{{ path('about') }}" class="nav-link">O stowarzyszeniu</a></li>
                 <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/actuals' %}active{% endif %}"><a href="{{ path('actuals') }}" class="nav-link">Aktualności</a></li>
                 <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/reports' %}active{% endif %}"><a href="{{ path('reports') }}" class="nav-link">Sprawozdania</a></li>
+                <li class="nav-item {% if path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) == '/contact' %}active{% endif %}"><a href="{{ path('contact') }}" class="nav-link">Kontakt</a></li>
 {#                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>#}
 {#                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>#}
 {#                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>#}

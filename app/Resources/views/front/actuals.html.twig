@@ -51,7 +51,7 @@
 
                                 <div class="text bg-white p-4">
                                     <h3 class="heading"><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></h3>
-                                    <p>{{ post.content | slice(0, 115) | striptags | raw }}</p>
+                                    <p>{{ post.content | slice(0, 115) | striptags | raw }}...</p>
                                     <div class="d-flex align-items-center mt-4">
                                         <p class="mb-0"><a href="/actuals/post/{{ post.id }}" class="btn btn-secondary">Czytaj
                                                 dalej <span class="ion-ios-arrow-round-forward"></span></a></p>
@@ -84,7 +84,7 @@
                                 {% endfor %}
                                 <div class="text bg-white p-4">
                                     <h3 class="heading"><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></h3>
-                                    <p>{{ post.content | slice(0, 115) | striptags | raw }}</p>
+                                    <p>{{ post.content | slice(0, 115) | striptags | raw }}...</p>
                                     <div class="d-flex align-items-center mt-4">
                                         <p class="mb-0"><a href="/actuals/post/{{ post.id }}" class="btn btn-secondary">Czytaj
                                                 dalej <span class="ion-ios-arrow-round-forward"></span></a></p>
@@ -116,60 +116,4 @@
 {#            </div>#}
         </div>
     </section>
-    {#    <main>#}
-    {#        <div class="route"><br></div>#}
-    {#        <div class="container">#}
-    {#            <article class="post">#}
-    {#                {% if lastPosts is defined %}#}
-    {#                    {% for post in lastPosts %}#}
-    {#                        <h1>{{ post.header }}</h1>#}
-    {#                    <div class="post__image">#}
-    {#                        {% for image in post.images | slice(0, 1) %}#}
-    {#                        <img src={{ asset("uploads/" ~ image.name ) }}>#}
-    {#                            {% endfor %}#}
-    {#                    </div>#}
-    {#                    <div class="post__content">#}
-    {#                        {{ post.content | slice(0, 360) | striptags | raw }}...#}
-    {#                    </div>#}
-    {#                        <a href="/actuals/post/{{ post.id }}"><button class="btn btn-yellow">Czytaj więcej</button></a>#}
-
-    {#                        <hr>#}
-    {#                    {% endfor %}#}
-    {#                {% elseif posts is not empty %}#}
-    {#                    {% for post in posts %}#}
-    {#                        <h1>{{ post.header }}</h1>#}
-    {#                    <div class="post__image">#}
-    {#                        {% for image in post.images | slice(0, 1) %}#}
-    {#                            <img src={{ asset("uploads/" ~ image.name ) }}>#}
-    {#                        {% endfor %}#}
-    {#                    </div>#}
-    {#                    <div class="post__content">#}
-
-    {#                        <p>{{ post.content | slice(0, 360) | striptags | raw }}...</p>#}
-    {#                    </div>#}
-    {#                        <a href="/actuals/post/{{ post.id }}"><button class="btn btn-yellow">Czytaj więcej</button></a>#}
-    {#                    <hr>#}
-    {#                    {% endfor %}#}
-    {#                {% else %}#}
-    {#                    <h1>Brak postów z tego okresu</h1>#}
-    {#                {% endif %}#}
-    {#            </article>#}
-
-    {#            <aside class="sidebar">#}
-    {#                <h1>Ostatnie wpisy</h1>#}
-    {#                <ul>#}
-    {#                {% for post in sidePosts | slice(0, 5) %}#}
-    {#                    <li><a href="/actuals/post/{{ post.id }}">{{ post.header }}</a></li>#}
-    {#                {% endfor %}#}
-    {#                </ul>#}
-    {#                <h1>Aktualności według daty</h1>#}
-    {#                <ul>#}
-    {#                    <li><a href={{ path('actuals_by_year', {'year': 2017}) }}>2017</a></li>#}
-    {#                    <li><a href={{ path('actuals_by_year', {'year': 2016}) }}>2016</a></li>#}
-    {#                    <li><a href={{ path('actuals_by_year', {'year': 2015}) }}>2015</a></li>#}
-    {#                    <li>2014</li>#}
-    {#                </ul>#}
-    {#            </aside>#}
-    {#        </div>#}
-    {#    </main>#}
 {% endblock %}
