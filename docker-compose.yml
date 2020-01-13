@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  php-fpm:
+    build: ./Docker/php-fpm
+    volumes:
+      - .:/usr/share/nginx/html
+      - ./logs:/usr/share/nginx/html/logs
+    privileged: true
+
+

@@ -13,7 +13,3 @@ _sonata_admin:
 
 elfinder:
   resource: "@FMElfinderBundle/Resources/config/routing.yml"
-
-liplex_multiple_file_upload:
-  resource: "@LiplexMultipleFileUploadBundle/Resources/config/routing.yml"
-  prefix:   /

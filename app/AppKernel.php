@@ -23,7 +23,6 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
-            new Liplex\MultipleFileUploadBundle\LiplexMultipleFileUploadBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         );
 
@@ -40,5 +39,11 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+    }
+
+    public function __construct($environment, $debug)
+    {
+        date_default_timezone_set('Europe/Warsaw');
+        parent::__construct($environment, $debug);
     }
 }

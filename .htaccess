@@ -1,5 +1,28 @@
+#<IfModule mod_rewrite.c>
+#    php_flag display_startup_errors on
+#    php_flag display_errors on
+#    php_flag html_errors on
+#    php_flag  log_errors on
+#    RewriteEngine On
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)$ web/$1 [QSA,END]
+#</IfModule>
+
 <IfModule mod_rewrite.c>
+    Options +FollowSymlinks
     RewriteEngine On
+
+    # Explicitly disable rewriting for front controllers
+    RewriteRule ^/web/index.php - [L]
+    RewriteRule ^/web/index.php - [L]
+
+    # Fix the bundles folder
+    RewriteRule ^bundles/(.*)$ /web/bundles/$1  [QSA,L]
+    RewriteRule ^assets/(.*)$ /web/assets/$1  [QSA,L]
+    RewriteRule ^uploads/(.*)$ /web/uploads/$1  [QSA,L]
+
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ web/$1 [QSA,END]
+    # Change below before deploying to production
+    RewriteRule ^(.*)$ /web/index.php [QSA,L]
+#    RewriteRule ^(.*)$ /web/app_dev.php [QSA,L]
 </IfModule>
